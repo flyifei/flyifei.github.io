@@ -1,278 +1,117 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FLYIFEI · 通往国泰驾驶舱</title>
-<meta name="description" content="记录我申请国泰航空见习飞行员培训计划（Cadet Pilot Programme）的全过程：申请信息、国泰与训练体系、学习资料，以及 MSFS 与真实飞行记录。">
-<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<title>Cathay Pacific Cadet Pilot — Preparation Notes</title>
+<meta name="description" content="Study notes for the Cathay Pacific Cadet Pilot Programme: application requirements, the training pathway, learning resources, and my flight log in MSFS and real aircraft.">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body data-page="home">
-
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html">
-      <svg viewBox="0 0 40 40" aria-hidden="true">
-        <defs><linearGradient id="bw1" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#3fe3c6"/><stop offset="1" stop-color="#f0b64b"/>
-        </linearGradient></defs>
-        <circle cx="20" cy="20" r="18.5" fill="none" stroke="rgba(141,171,201,.35)"/>
-        <path d="M7 25c7.5-1.2 11.6-4.6 13.6-11.4 1.1 6.4 4.6 9.8 11.4 10.6-5.6 1.1-9.2 3.4-10.7 7.3-1.1-3.9-5.9-5.8-14.3-6.5Z" fill="url(#bw1)"/>
-      </svg>
-      <span class="brand-txt"><span class="brand-name">FLYIFEI</span><span class="brand-sub">Cadet Pilot Log</span></span>
-    </a>
-    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
-    <nav class="nav-links">
-      <a href="index.html" data-nav="home">首页</a>
-      <a href="apply.html" data-nav="apply">申请信息</a>
-      <a href="cathay.html" data-nav="cathay">国泰与训练</a>
-      <a href="resources.html" data-nav="resources">学习资料</a>
-      <a href="logbook.html" data-nav="logbook">飞行记录</a>
-    </nav>
-  </div>
-</header>
-
+<body>
 <main>
-  <section class="hero">
-    <div class="hero-horizon"></div>
-    <div class="container">
-      <div class="hero-inner">
-        <span class="kicker"><span class="dot"></span>CATHAY PACIFIC · CADET PILOT PROGRAMME</span>
-        <h1>
-          从<span class="grad">模拟机</span><br>到<span class="grad">驾驶舱</span>
-          <small>目标：通过国泰航空见习飞行员培训计划，成为第二副驾驶，再成为机长。</small>
-        </h1>
-        <p class="hero-lead">
-          这是我的公开记录本。申请流程、资格要求、备考资料、模拟机练习，以及每一次真实起落——
-          全部按时间沉淀在这里。不美化，不跳过失败的环节，给自己留一条看得见的成长轨迹。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="apply.html">看申请流程 →</a>
-          <a class="btn btn-ghost" href="logbook.html">打开飞行记录</a>
-        </div>
 
-        <div class="progress-wrap reveal">
-          <div class="progress-top">
-            <span>当前所处阶段</span>
-            <strong><span data-progress-label>0%</span> · 第 3 / 11 步</strong>
-          </div>
-          <div class="progress-bar" data-progress="27"><i></i></div>
-          <p style="margin-top:12px;font-size:12.6px;color:var(--muted)">
-            进度值在 index.html 里改 <code style="font-family:var(--mono);color:var(--jade-2)">data-progress</code>，换阶段时自己往上挪。
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+<nav class="top">
+  <a href="index.html">Home</a>
+  <a href="application.html">Application</a>
+  <a href="cathay.html">Cathay &amp; Training</a>
+  <a href="resources.html">Resources</a>
+  <a href="logbook.html">Flight Log</a>
+</nav>
 
-  <section class="section" style="padding-top:10px">
-    <div class="container">
-      <div class="stats reveal">
-        <div class="stat">
-          <div class="stat-v"><span data-count="80">0</span> <small>周</small></div>
-          <div class="stat-k">培训计划时长</div>
-        </div>
-        <div class="stat violet">
-          <div class="stat-v"><span data-count="6">0</span> <small>步</small></div>
-          <div class="stat-k">遴选流程</div>
-        </div>
-        <div class="stat amber">
-          <div class="stat-v"><span data-count="18">0</span> <small>岁+</small></div>
-          <div class="stat-k">最低年龄要求</div>
-        </div>
-        <div class="stat">
-          <div class="stat-v"><span data-count="4">0</span> <small>级</small></div>
-          <div class="stat-k">ICAO 英语要求</div>
-        </div>
-      </div>
-      <p style="margin-top:14px;font-size:12.4px;color:var(--muted);font-family:var(--mono)">
-        ↑ 以上均为国泰招聘官网公开信息（2026 年抓取），最新版本以官网为准。
-      </p>
-    </div>
-  </section>
+<h1>Cathay Pacific Cadet Pilot Programme — Preparation Notes</h1>
 
-  <div class="container"><div class="divider"></div></div>
+<p>
+This site collects what I am learning on the way into the Cathay Pacific Cadet Pilot Programme:
+who is eligible and how to apply, how the airline and its training pathway work, the material I study,
+and a log of every session I fly — in the simulator and in a real aircraft.
+</p>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Four Chapters</div>
-        <h2>四个板块，装下整条路径</h2>
-        <p class="lead">从「我要不要申请」到「今天飞了几小时」，每一块都独立可查。</p>
-      </div>
+<p>
+Eligibility rules and process details change between recruitment cycles.
+Always confirm on <a href="https://careers.cathaypacific.com/en/careers/our-teams/pilot/pilot-detail-page" target="_blank" rel="noopener">Cathay careers</a> before you invest months of preparation.
+</p>
 
-      <div class="grid grid-2">
-        <a class="card reveal" href="apply.html">
-          <span class="card-num">01</span>
-          <div class="card-icon">✦</div>
-          <h3>申请信息</h3>
-          <p>资格要求逐条对照、英语成绩换算、六步遴选流程、材料清单（可勾选保存），以及我踩过的坑。</p>
-          <div class="chips">
-            <span class="chip jade">资格要求</span>
-            <span class="chip">遴选流程</span>
-            <span class="chip">清单</span>
-          </div>
-          <span class="more">进入章节</span>
-        </a>
+<h2>Sections</h2>
 
-        <a class="card reveal" href="cathay.html">
-          <span class="card-num">02</span>
-          <div class="card-icon">◎</div>
-          <h3>国泰与训练</h3>
-          <p>公司概况、机队构成、见习飞行员到机长的职级阶梯、80 周训练怎么走、第二副驾驶的薪酬福利。</p>
-          <div class="chips">
-            <span class="chip jade">机队</span>
-            <span class="chip">职级阶梯</span>
-            <span class="chip">薪酬福利</span>
-          </div>
-          <span class="more">进入章节</span>
-        </a>
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th style="width:32%">Track</th><th>Start here</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Cathay cadet application</strong></td>
+      <td><a href="application.html">Application</a> — eligibility, English requirements, the six-step selection process, and my own checklist.</td>
+    </tr>
+    <tr>
+      <td><strong>Cathay and the training pathway</strong></td>
+      <td><a href="cathay.html">Cathay &amp; Training</a> — career ladder, the ~80-week programme, the fleet, and the Second Officer package.</td>
+    </tr>
+    <tr>
+      <td><strong>Study resources</strong></td>
+      <td><a href="resources.html">Resources</a> — ATPL theory subjects, radio telephony, simulator drills, books and channels.</td>
+    </tr>
+    <tr>
+      <td><strong>Flight log</strong></td>
+      <td><a href="logbook.html">Flight Log</a> — simulator sessions in MSFS and real-world flights, with running totals.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
-        <a class="card reveal" href="resources.html">
-          <span class="card-num">03</span>
-          <div class="card-icon">▤</div>
-          <h3>学习资料</h3>
-          <p>官方一手资料、ATPL 理论科目、英语与 ICAO 陆空通话、模拟机练习科目、面试与小组讨论准备。</p>
-          <div class="chips">
-            <span class="chip jade">科目清单</span>
-            <span class="chip">书单</span>
-            <span class="chip">视频</span>
-          </div>
-          <span class="more">进入章节</span>
-        </a>
+<hr>
 
-        <a class="card reveal" href="logbook.html">
-          <span class="card-num">04</span>
-          <div class="card-icon">✈</div>
-          <h3>飞行记录</h3>
-          <p>MSFS 模拟机与真实飞行分开记录：机型、航段、时长、起落次数、当时在练什么。数据自动统计。</p>
-          <div class="chips">
-            <span class="chip jade">模拟机</span>
-            <span class="chip">真实飞行</span>
-            <span class="chip">自动汇总</span>
-          </div>
-          <span class="more">进入章节</span>
-        </a>
-      </div>
-    </div>
-  </section>
+<h3>Aviation weather — Hong Kong International Airport (VHHH)</h3>
 
-  <div class="container"><div class="divider"></div></div>
+<p>METAR:</p>
+<textarea readonly id="txt_metar" class="weather">Loading…</textarea>
 
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-2" style="align-items:start;gap:40px">
-        <div class="reveal">
-          <div class="eyebrow">Timeline</div>
-          <h2 style="font-size:1.7rem">我的时间线</h2>
-          <p class="lead" style="margin-bottom:26px">
-            下面几条是模板占位，换成你自己的真实节点就行。状态分「已完成 / 进行中 / 计划」。
-          </p>
+<p>TAF:</p>
+<textarea readonly id="txt_taf" class="weather">Loading…</textarea>
 
-          <div class="timeline">
-            <div class="tl-item done">
-              <div class="tl-date">2026 · 11 <span class="chip jade" style="margin-left:8px">已完成</span></div>
-              <h3>决定认真走这条路</h3>
-              <p>把「喜欢开飞机」变成可执行计划：查清国泰见习飞行员计划的资格线，建立这个网站做记录。</p>
-            </div>
-            <div class="tl-item done">
-              <div class="tl-date">2026 · 11 <span class="chip jade" style="margin-left:8px">已完成</span></div>
-              <h3>开始系统性模拟机训练</h3>
-              <p>用 MSFS 练基本操纵、五边起落、仪表进近，每次飞行都记进飞行记录页。</p>
-            </div>
-            <div class="tl-item">
-              <div class="tl-date">进行中</div>
-              <h3>英语成绩与理论打底</h3>
-              <p>IELTS 目标 6.5（听力、口语各 6.5+），同时按 ATPL 科目顺序啃气象、飞行原理、航法。</p>
-            </div>
-            <div class="tl-item future">
-              <div class="tl-date">计划</div>
-              <h3>提交在线申请 → 计算机测评 → 面试</h3>
-              <p>申请全年开放。按官方六步流程推进，每一步的准备进度记在申请页的清单里。</p>
-            </div>
-            <div class="tl-item future">
-              <div class="tl-date">目标</div>
-              <h3>进入 80 周培训，成为第二副驾驶</h3>
-              <p>香港与海外的地面理论 + 飞行训练，取得商用飞行员执照（CPL），回港上机型。</p>
-            </div>
-          </div>
-        </div>
+<p class="small">
+Source: <a href="https://api.met.no/" target="_blank" rel="noopener">MET Norway</a> (api.met.no), raw text, latest report only.
+Reload the page for the latest observation. For study only — not for operational use.
+</p>
 
-        <div class="reveal">
-          <div class="card" style="padding:28px">
-            <h3 style="font-size:1.15rem;margin-bottom:14px">这个网站怎么用</h3>
-            <div class="checklist" style="border:0;background:transparent">
-              <div style="padding:10px 0;border-bottom:1px solid rgba(141,171,201,.1);display:flex;gap:12px">
-                <span class="chip jade" style="flex-shrink:0">01</span>
-                <span style="font-size:14px;color:var(--text-dim)">每飞一次就加一条记录：打开 <a href="logbook.html">飞行记录</a> 页最下方的「怎么新增一条」。</span>
-              </div>
-              <div style="padding:10px 0;border-bottom:1px solid rgba(141,171,201,.1);display:flex;gap:12px">
-                <span class="chip jade" style="flex-shrink:0">02</span>
-                <span style="font-size:14px;color:var(--text-dim)">申请材料准备到哪一步，就在 <a href="apply.html">申请信息</a> 页的清单里勾掉，浏览器会记住。</span>
-              </div>
-              <div style="padding:10px 0;border-bottom:1px solid rgba(141,171,201,.1);display:flex;gap:12px">
-                <span class="chip jade" style="flex-shrink:0">03</span>
-                <span style="font-size:14px;color:var(--text-dim)">找到好资料就丢进 <a href="resources.html">学习资料</a> 页对应分类，别收藏在浏览器书签里吃灰。</span>
-              </div>
-              <div style="padding:10px 0;display:flex;gap:12px">
-                <span class="chip jade" style="flex-shrink:0">04</span>
-                <span style="font-size:14px;color:var(--text-dim)">进度条和时间线都在 HTML 里手改，没有后台、没有数据库，纯静态。</span>
-              </div>
-            </div>
-            <div class="note jade" style="margin-top:20px">
-              <span class="note-ico">✎</span>
-              <div>全站静态文件，本地直接打开也能看；但飞行记录要读 JSON，需起个本地服务器（命令见 README）。</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+function loadWx(kind, id) {
+  var el = document.getElementById(id);
+  fetch('https://api.met.no/weatherapi/tafmetar/1.0/' + kind + '.txt?icao=VHHH')
+    .then(function (r) { return r.text(); })
+    .then(function (t) {
+      var lines = (t || '').split('\n')
+        .map(function (s) { return s.trim().replace(/=$/, ''); })
+        .filter(function (s) { return s.length > 0; });
+      el.value = lines.length ? lines[lines.length - 1] : 'No data returned.';
+    })
+    .catch(function () {
+      el.value = 'Unable to load ' + kind.toUpperCase() + ' (network unavailable).';
+    });
+}
+loadWx('metar', 'txt_metar');
+loadWx('taf', 'txt_taf');
+</script>
+
+<hr>
+
+<h2>About</h2>
+
+<p>
+I am a Hong Kong–based candidate preparing for the Cadet Pilot Programme. My background is in
+(replace this line with your own: education, current job, and why you want to fly).
+</p>
+
+<p>
+No real flight hours yet; most of my practice is in Microsoft Flight Simulator with a desktop yoke and stick.
+I keep this site because writing things down is the only way I know to find out what I actually understand.
+</p>
+
+<p class="small">
+Last updated: 22 November 2026. Personal study site — not affiliated with Cathay Pacific Airways.
+Programme facts are taken from the Cathay careers pages (figures dated January 2026).
+</p>
+
 </main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">
-          <svg viewBox="0 0 40 40" aria-hidden="true">
-            <defs><linearGradient id="bw2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#3fe3c6"/><stop offset="1" stop-color="#f0b64b"/>
-            </linearGradient></defs>
-            <circle cx="20" cy="20" r="18.5" fill="none" stroke="rgba(141,171,201,.35)"/>
-            <path d="M7 25c7.5-1.2 11.6-4.6 13.6-11.4 1.1 6.4 4.6 9.8 11.4 10.6-5.6 1.1-9.2 3.4-10.7 7.3-1.1-3.9-5.9-5.8-14.3-6.5Z" fill="url(#bw2)"/>
-          </svg>
-          <span class="brand-txt"><span class="brand-name">FLYIFEI</span><span class="brand-sub">Cadet Pilot Log</span></span>
-        </a>
-        <p>一个飞行学员的记录本：申请国泰见习飞行员计划的每一步，以及每一次在模拟机与真实驾驶舱里的起落。</p>
-      </div>
-      <div>
-        <h4>Sitemap</h4>
-        <div class="footer-links">
-          <a href="apply.html">申请信息</a>
-          <a href="cathay.html">国泰与训练</a>
-          <a href="resources.html">学习资料</a>
-          <a href="logbook.html">飞行记录</a>
-        </div>
-      </div>
-      <div>
-        <h4>Official</h4>
-        <div class="footer-links">
-          <a href="https://careers.cathaypacific.com/en/careers/our-teams/pilot" target="_blank" rel="noopener">国泰招聘 · 飞行员</a>
-          <a href="https://careers.cathaypacific.com/cn/careers/our-teams/pilot/pilot-detail-page" target="_blank" rel="noopener">见习飞行员计划（中文）</a>
-          <a href="https://www.cad.gov.hk/english/aeromedical.html" target="_blank" rel="noopener">HKCAD 体检要求</a>
-          <a href="https://github.com/flyifei" target="_blank" rel="noopener">我的 GitHub</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span data-year>2026</span> FLYIFEI · 个人记录，非国泰航空官方页面</span>
-      <span>PLAIN HTML / CSS / JS · HOSTED ON GITHUB PAGES</span>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/js/main.js"></script>
 </body>
 </html>
