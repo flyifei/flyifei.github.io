@@ -181,6 +181,191 @@ without looking at notes.
 </table>
 </div>
 
+<h2>Reference — aviation weather</h2>
+
+<p>
+Live METAR and TAF for Hong Kong International (VHHH), latest report only. Reading one aloud and
+explaining it every day is the cheapest vocabulary practice there is.
+</p>
+
+<p><strong>METAR</strong></p>
+<textarea readonly id="txt_metar" class="weather">Loading…</textarea>
+
+<p><strong>TAF</strong></p>
+<textarea readonly id="txt_taf" class="weather">Loading…</textarea>
+
+<p class="small">
+Source: <a href="https://api.met.no/" target="_blank" rel="noopener">MET Norway</a> (api.met.no), raw text.
+For study only — not for operational use.
+</p>
+
+<h2>Aviation English</h2>
+
+<p>
+Selection includes an ICAO English test, and the licence requires <strong>ICAO Language Proficiency
+level 4 or above</strong>. This is my working set: what gets assessed, the standard calls I drill, and the
+words I keep having to look up.
+</p>
+
+<h3>What is assessed</h3>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th style="width:20%">Area</th><th>What the examiner is listening for</th><th style="width:30%">What I do about it</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Pronunciation</strong></td><td>Clear, consistent delivery that a controller can decode first time, dialect notwithstanding.</td><td>Record 90 seconds, play back, mark the words I slur.</td></tr>
+    <tr><td><strong>Structure</strong></td><td>Basic sentence forms used correctly; errors are tolerated only when meaning survives.</td><td>Drill one structure per week: “request…”, “unable…”, “confirm…”.</td></tr>
+    <tr><td><strong>Vocabulary</strong></td><td>Enough plain and aviation-specific words to handle routine, unusual and emergency situations.</td><td>Keep the word lists below and add to them from real transmissions.</td></tr>
+    <tr><td><strong>Fluency</strong></td><td>Talking at a natural pace without long, meaning-destroying pauses.</td><td>Speak without stopping for 2 minutes on one topic, daily.</td></tr>
+    <tr><td><strong>Comprehension</strong></td><td>Understanding accented, fast or distorted speech in operational conditions.</td><td>Daily ATC dictation from live feeds, then check against the audio.</td></tr>
+    <tr><td><strong>Interactions</strong></td><td>Keeping the exchange going: checking, clarifying, asking for a repeat.</td><td>Practise “say again”, “confirm”, “unable” until they are automatic.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Standard calls I practise</h3>
+
+<p>
+Phraseology is defined in ICAO Doc 9432; local procedures may differ, so check the AIP as well.
+These are the ones that come up every session.
+</p>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th style="width:26%">Call</th><th style="width:34%">Means</th><th>Watch out for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Say again</strong></td><td>Repeat your last transmission.</td><td>Add the reason only if it helps: “say again, blocked”.</td></tr>
+    <tr><td><strong>Standby</strong></td><td>Wait — I will call you.</td><td>It is not an approval of anything.</td></tr>
+    <tr><td><strong>Roger</strong></td><td>I have received your last transmission.</td><td>Never a clearance. Does not mean “yes”.</td></tr>
+    <tr><td><strong>Wilco</strong></td><td>I understand and will comply.</td><td>Only for instructions you can actually carry out.</td></tr>
+    <tr><td><strong>Affirm / Negative</strong></td><td>Yes / no.</td><td>Not “affirmative” in modern standard phraseology.</td></tr>
+    <tr><td><strong>Correction</strong></td><td>I made an error; the correct version follows.</td><td>Say it immediately — do not let a wrong readback stand.</td></tr>
+    <tr><td><strong>Line up and wait</strong></td><td>Enter the runway and hold position.</td><td>Replaced the old “position and hold”.</td></tr>
+    <tr><td><strong>Cleared for take-off</strong></td><td>Permission to depart.</td><td>No other call authorises departure.</td></tr>
+    <tr><td><strong>Cleared to land</strong></td><td>Permission to land.</td><td>Separate from “cleared for the approach”.</td></tr>
+    <tr><td><strong>Hold short of runway 07L</strong></td><td>Stop before the holding point.</td><td>Read back the runway designator.</td></tr>
+    <tr><td><strong>Climb / descend and maintain 5,000 ft</strong></td><td>Reach and stay at that level.</td><td>Read back the level, not just “roger”.</td></tr>
+    <tr><td><strong>Report established</strong></td><td>Advise when on the localiser / approach path.</td><td>Say “established” only when both are true.</td></tr>
+    <tr><td><strong>Unable</strong></td><td>I cannot comply.</td><td>Add a reason if you can: “unable, performance”.</td></tr>
+    <tr><td><strong>Go around</strong></td><td>Abandon the approach.</td><td>Say it early; fly first, explain later.</td></tr>
+    <tr><td><strong>Mayday ×3</strong> / <strong>Pan-pan ×3</strong></td><td>Distress (grave and imminent danger) / urgency.</td><td>Then callsign, nature, intentions, position, level, persons.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Decoding a METAR</h3>
+
+<p>One report, element by element. This is the exercise I do before every simulator session.</p>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th style="width:22%">Group</th><th style="width:24%">Reads as</th><th>Meaning</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>VHHH</code></td><td>station</td><td>Hong Kong International.</td></tr>
+    <tr><td><code>221000Z</code></td><td>day 22, 10:00 UTC</td><td>Observation time. Time is always UTC.</td></tr>
+    <tr><td><code>10018KT</code></td><td>wind 100° at 18 kt</td><td>True direction, mean speed; “G” would mark gusts.</td></tr>
+    <tr><td><code>9999</code></td><td>10 km or more</td><td>Prevailing visibility. Four digits are metres.</td></tr>
+    <tr><td><code>FEW015</code></td><td>few at 1,500 ft</td><td>1–2 oktas. FEW / SCT / BKN / OVC.</td></tr>
+    <tr><td><code>SCT020</code></td><td>scattered at 2,000 ft</td><td>3–4 oktas.</td></tr>
+    <tr><td><code>22/17</code></td><td>22 °C, dew point 17 °C</td><td>Small spread means high humidity, mist or fog risk.</td></tr>
+    <tr><td><code>Q1020</code></td><td>QNH 1020 hPa</td><td>Set on the sub-scale for altitude above mean sea level.</td></tr>
+    <tr><td><code>NOSIG</code></td><td>no significant change</td><td>Forecast trend for the next two hours.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Word lists</h3>
+
+<details>
+  <summary>Weather</summary>
+  <ul>
+    <li><strong>CAVOK</strong> — ceiling and visibility OK: 10 km or more, no cloud below 5,000 ft, no significant weather.</li>
+    <li><strong>SHRA</strong> — rain showers; <strong>TSRA</strong> — thunderstorm with rain.</li>
+    <li><strong>FZFG</strong> — freezing fog; <strong>MIFG</strong> — shallow fog; <strong>BR</strong> — mist.</li>
+    <li><strong>Wind shear</strong> — sudden change in wind speed or direction over a short distance.</li>
+    <li><strong>Microburst</strong> — a concentrated downdraft; the one that ruins the approach.</li>
+    <li><strong>QNH / QFE / QNE</strong> — sea-level pressure / field pressure / standard (1013.25 hPa).</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Aircraft and systems</summary>
+  <ul>
+    <li><strong>APU</strong> — auxiliary power unit; <strong>GPU</strong> — ground power unit.</li>
+    <li><strong>Flaps / slats</strong> — high-lift devices on the trailing and leading edge.</li>
+    <li><strong>Trim</strong> — the setting that removes steady control force.</li>
+    <li><strong>TOGA</strong> — take-off / go-around thrust.</li>
+    <li><strong>V1 / VR / V2</strong> — decision speed, rotation speed, take-off safety speed.</li>
+    <li><strong>MCDU / FMS</strong> — the box and the flight management system behind it.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>ATC instructions</summary>
+  <ul>
+    <li><strong>Cleared for the approach</strong> — permission to fly the published approach, not to land.</li>
+    <li><strong>Expedite</strong> — do it promptly; “without delay” is stronger.</li>
+    <li><strong>Cross at or above 3,000 ft</strong> — level restriction at a point, not a clearance to descend.</li>
+    <li><strong>Squawk 7043</strong> — set that code in the transponder.</li>
+    <li><strong>Ident</strong> — press the ident button so the return flashes.</li>
+    <li><strong>Number one for the ILS</strong> — your sequence in the arrival.</li>
+  </ul>
+</details>
+
+<details>
+  <summary>Emergencies</summary>
+  <ul>
+    <li><strong>MAYDAY</strong> — distress: grave and imminent danger, need immediate assistance.</li>
+    <li><strong>PAN-PAN</strong> — urgency: a situation that is concerning but not immediately life-threatening.</li>
+    <li><strong>Declaring an emergency</strong> — say the words; the controller only needs the type and the intentions.</li>
+    <li><strong>Negative contact / lost communications</strong> — say what you can and cannot hear.</li>
+    <li><strong>Assistance required</strong> — equipment on the ground for the arrival.</li>
+  </ul>
+</details>
+
+<h3>Twenty minutes a day</h3>
+
+<ul>
+  <li><strong>10 minutes shadowing.</strong> Repeat live ATC audio half a sentence behind the controller — rhythm and linking, not comprehension.</li>
+  <li><strong>5 minutes dictation.</strong> Write down callsigns, instructions and runway numbers, then check them against the recording.</li>
+  <li><strong>5 minutes speaking.</strong> Read one METAR aloud, decode it, and explain the flight you would plan. Record it; listen back once.</li>
+</ul>
+
+<h3>Where to listen</h3>
+
+<div class="table-scroll">
+<table>
+  <thead><tr><th style="width:28%">Source</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://www.liveatc.net/" target="_blank" rel="noopener">LiveATC.net</a></td><td>Live tower and approach feeds; best for dictation under real speed.</td></tr>
+    <tr><td><a href="https://www.vatsim.net/" target="_blank" rel="noopener">VATSIM</a></td><td>Fly with human controllers and be forced to talk back.</td></tr>
+    <tr><td><a href="https://www.icao.int/" target="_blank" rel="noopener">ICAO Doc 9432</a></td><td>The reference for standard radiotelephony phraseology.</td></tr>
+    <tr><td><a href="https://skybrary.aero/" target="_blank" rel="noopener">SKYbrary</a></td><td>Plain-language explanations of the concepts behind the calls.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Self-check</h3>
+
+<ul>
+  <li>Can I read a METAR aloud and explain every group without hesitating?</li>
+  <li>Can I give a position report: callsign, position, level, next point, time?</li>
+  <li>Can I say “unable” and offer an alternative, in one breath?</li>
+  <li>Can I follow a transmission with two instructions and read both back?</li>
+  <li>Can I keep talking for 90 seconds about a flight I actually made?</li>
+</ul>
+
+<p class="small">
+Phraseology and proficiency standards are set by ICAO; local procedures vary by state and by aerodrome.
+Nothing here replaces the AIP or the company manual.
+</p>
+
 </main>
 
 <footer class="site-footer">
@@ -189,5 +374,23 @@ without looking at notes.
     <p class="muted">Last updated 22 November 2026 · <a href="https://github.com/flyifei" target="_blank" rel="noopener">GitHub</a></p>
   </div>
 </footer>
+<script>
+function loadWx(kind, id) {
+  var el = document.getElementById(id);
+  fetch('https://api.met.no/weatherapi/tafmetar/1.0/' + kind + '.txt?icao=VHHH')
+    .then(function (r) { return r.text(); })
+    .then(function (t) {
+      var lines = (t || '').split('\n')
+        .map(function (s) { return s.trim().replace(/=$/, ''); })
+        .filter(function (s) { return s.length > 0; });
+      el.value = lines.length ? lines[lines.length - 1] : 'No data returned.';
+    })
+    .catch(function () {
+      el.value = 'Unable to load ' + kind.toUpperCase() + ' (network unavailable).';
+    });
+}
+loadWx('metar', 'txt_metar');
+loadWx('taf', 'txt_taf');
+</script>
 </body>
 </html>

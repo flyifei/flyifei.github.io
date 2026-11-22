@@ -285,3 +285,19 @@ tr.weak td { color: var(--ink-soft); }
 .legend i.dash { border-top-style: dashed; }
 .legend i.ring { width: 11px; height: 11px; border: 1.5px dashed #5d6d7e; border-radius: 50%; }
 .legend b { color: var(--ink); font-weight: 600; }
+/* ---------- collapsible word lists ---------- */
+details {
+  border: 1px solid var(--blue-line);
+  border-radius: 3px;
+  padding: 0.55rem 0.8rem;
+  margin: 0.5rem 0;
+  background: #fbfdff;
+}
+details[open] { background: #fff; }
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+summary::marker { color: var(--blue); }
+details ul { margin: 0.6rem 0 0.2rem; }

@@ -7,11 +7,11 @@ Live at **https://flyifei.github.io**
 
 | File | Content |
 | --- | --- |
-| `index.html` | Home: hero, profile summary, section index, live VHHH METAR/TAF |
+| `index.html` | Home: hero, profile summary, section index |
 | `about.html` | Full profile — engineering background, leadership, what I bring to a flight deck |
 | `application.html` | Eligibility, English requirements, six-step selection process, checklist |
 | `cathay.html` | Career ladder, ~80-week training pathway, fleet, Second Officer package |
-| `resources.html` | Official sources, ATPL subjects, radiotelephony drills, simulator drills, books |
+| `resources.html` | Official sources, ATPL subjects, radio telephony, aviation English module, live VHHH METAR/TAF, books |
 | `logbook.html` | Flight log: at-a-glance comparison, real flying table, simulator table + route map |
 | `404.html` | Not found |
 

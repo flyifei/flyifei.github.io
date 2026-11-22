@@ -83,7 +83,7 @@ English, the material I am studying, and a log of every session.
     </tr>
     <tr>
       <td><strong>Resources</strong></td>
-      <td><a href="resources.html">Study material</a> — ATPL subjects, radiotelephony practice, simulator drills, books and channels.</td>
+      <td><a href="resources.html">Study material and reference</a> — ATPL subjects, aviation English, live VHHH weather, simulator drills, books and channels.</td>
     </tr>
     <tr>
       <td><strong>Flight log</strong></td>
@@ -93,45 +93,11 @@ English, the material I am studying, and a log of every session.
 </table>
 </div>
 
-<h2>Aviation weather — Hong Kong International (VHHH)</h2>
-
-<p class="muted">Live METAR and TAF, latest report only.</p>
-
-<p><strong>METAR</strong></p>
-<textarea readonly id="txt_metar" class="weather">Loading…</textarea>
-
-<p><strong>TAF</strong></p>
-<textarea readonly id="txt_taf" class="weather">Loading…</textarea>
-
-<p class="muted">
-Source: <a href="https://api.met.no/" target="_blank" rel="noopener">MET Norway</a> (api.met.no), raw text.
-For study only — not for operational use.
-</p>
-
 <div class="note">
   <p><strong>On the figures.</strong> Programme details — about 80 weeks, eligibility, English scores, selection steps,
   Second Officer package — come from the Cathay careers pages, with figures dated January 2026. Requirements are
   reviewed periodically; check the official pages before relying on anything here.</p>
 </div>
-
-<script>
-function loadWx(kind, id) {
-  var el = document.getElementById(id);
-  fetch('https://api.met.no/weatherapi/tafmetar/1.0/' + kind + '.txt?icao=VHHH')
-    .then(function (r) { return r.text(); })
-    .then(function (t) {
-      var lines = (t || '').split('\n')
-        .map(function (s) { return s.trim().replace(/=$/, ''); })
-        .filter(function (s) { return s.length > 0; });
-      el.value = lines.length ? lines[lines.length - 1] : 'No data returned.';
-    })
-    .catch(function () {
-      el.value = 'Unable to load ' + kind.toUpperCase() + ' (network unavailable).';
-    });
-}
-loadWx('metar', 'txt_metar');
-loadWx('taf', 'txt_taf');
-</script>
 
 </main>
 
