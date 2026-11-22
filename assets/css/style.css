@@ -201,8 +201,47 @@ textarea.weather {
   resize: vertical;
 }
 
-/* ---------- 页脚 ---------- */
-.site-footer {
+/* ---------- real / simulator tags ---------- */
+.tag {
+  display: inline-block;
+  font-size: 10.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+.tag.real { background: var(--blue); color: #fff; }
+.tag.sim { background: var(--blue-fill); color: var(--blue); border: 1px solid var(--blue-line); }
+
+/* ---------- route map ---------- */.map-box {
+  border: 1px solid var(--blue-line);
+  background: #fff;
+  padding: 8px;
+  margin: 1rem 0;
+}
+.map-box svg { width: 100%; height: auto; display: block; }
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin: 0.6rem 0 0;
+}
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { display: inline-block; width: 22px; height: 0; border-top: 2px solid #1a6fb5; }
+.legend i.weak { border-top-style: dashed; opacity: 0.5; }
+.legend i.dot { width: 9px; height: 9px; border: 0; border-radius: 50%; background: #1a6fb5; }
+tr.weak td { color: var(--ink-soft); }
+@media (max-width: 720px) {
+  .map-box { overflow-x: auto; }
+  .map-box svg { min-width: 640px; }
+}
+
+/* ---------- 页脚 ---------- */.site-footer {
   background: var(--bg-soft);
   border-top: 1px solid var(--blue-line);
   padding: 1.5rem 0;

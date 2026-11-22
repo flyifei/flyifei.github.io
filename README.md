@@ -12,7 +12,7 @@ Live at **https://flyifei.github.io**
 | `application.html` | Eligibility, English requirements, six-step selection process, checklist |
 | `cathay.html` | Career ladder, ~80-week training pathway, fleet, Second Officer package |
 | `resources.html` | Official sources, ATPL subjects, radiotelephony drills, simulator drills, books |
-| `logbook.html` | Simulator and real flight tables with totals |
+| `logbook.html` | Flight log: at-a-glance comparison, real flying table, simulator table + route map |
 | `404.html` | Not found |
 
 ## Stack
@@ -34,14 +34,32 @@ cross-origin fetch.
 
 ## Editing
 
-- **Flight log**: add a `<tr>` to the simulator or real table in `logbook.html`, then update the totals table at the top.
+- **Flight log**: add a `<tr>` to the *Real flying* or *Simulated flying* table in `logbook.html`, keeping the two separate, then update the matching column in the *At a glance* table.
 - **ATPL subject status**: edit the status column in the `resources.html` subject table.
 - **Checklist**: plain `<ul>` in `application.html`.
 - **Navigation**: the `<header>` block is duplicated in every page — when adding a page, update all of them.
 - **Theme**: `assets/css/style.css`, CSS variables at the top (`--blue`, `--blue-fill`, `--blue-line`).
 
-## Deployment
+## Route map
 
+Inside `logbook.html`, under *Simulated flying*, there is a world map of every simulator leg drawn as
+inline SVG — no tiles, no CDN, no JavaScript. It is generated from `routes.csv` into the block between
+`<!-- ROUTEMAP:START -->` and `<!-- ROUTEMAP:END -->`, so re-running the build is idempotent.
+
+```powershell
+# 1. re-extract legs from the simulator logbook (MSFS 2024, Steam cloud save)
+python tools/extract_routes.py "D:\steam\userdata\1041263203\2537590\remote\sr_logbook" > routes.csv
+
+# 2. redraw the map inside logbook.html
+python tools/build_map.py --routes routes.csv --airports airports.json --land ne_110m_land.geojson
+```
+
+- `routes.csv` — three columns (`from,to,count`); edit by hand if you prefer.
+- `airports.json` (mwgg/Airports) and `ne_110m_land.geojson` (Natural Earth 110m land) are build-time
+  inputs only and are **not** shipped with the site.
+- The map covers simulator legs only. Real flights are never plotted on it.
+
+## Deployment
 GitHub Pages serves this repository's `master` branch as the user site `flyifei.github.io`.
 `.nojekyll` stops Jekyll from processing the directory.
 
