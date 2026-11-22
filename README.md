@@ -59,6 +59,15 @@ python tools/build_map.py --routes routes.csv --airports airports.json --land ne
   inputs only and are **not** shipped with the site.
 - The map covers simulator legs only. Real flights are never plotted on it.
 
+### Map behaviour
+
+- **Colour = aircraft type** (one colour per type, listed in the legend with a leg count).
+- Dashed lines were flown once; dashed rings are local circuits at a single field.
+- **Zoom / pan**: mouse wheel, pinch, drag, double-click, or the `+ − Reset` buttons.
+  Handled by `assets/js/map-zoom.js` (plain JS, no dependencies, works offline).
+- `routes.csv` now carries a fourth column: `from,to,aircraft,count`. Aircraft attribution is
+  inferred from the order of records in the logbook file; if a leg is coloured with the wrong type,
+  correct that row in `routes.csv` and re-run the build.
 ## Deployment
 GitHub Pages serves this repository's `master` branch as the user site `flyifei.github.io`.
 `.nojekyll` stops Jekyll from processing the directory.
