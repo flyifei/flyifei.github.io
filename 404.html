@@ -1,13 +1,26 @@
----
-layout: default
-title: 404 - Page not found
-permalink: /404.html
----
-
-<div class="text-center">
-  <h1>Whoops, this page doesn't exist.</h1>
-  <h1>Move along. (404 error)</h1>
-  <br/>
-
-  <img src="{{ 'assets/img/404-southpark.jpg' | relative_url }}" alt="Not found" />
-</div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 · 航路不存在 | FLYIFEI</title>
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body data-page="404">
+<main class="hero" style="min-height:78vh;display:grid;place-items:center">
+  <div class="container" style="text-align:center;max-width:640px">
+    <span class="kicker"><span class="dot"></span>NAVIGATION ERROR</span>
+    <h1 style="margin-top:24px;font-size:clamp(2.4rem,7vw,4rem)"><span class="grad">404</span></h1>
+    <p class="hero-lead" style="margin:18px auto 0">
+      这条航路不存在，或者已经改航。检查一下地址，或者回首页重新计划航线。
+    </p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-primary" href="/index.html">回到首页</a>
+      <a class="btn btn-ghost" href="/logbook.html">飞行记录</a>
+    </div>
+  </div>
+</main>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

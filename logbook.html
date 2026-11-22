@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>飞行记录 | FLYIFEI</title>
+<meta name="description" content="我的飞行记录：MSFS 模拟机训练与真实飞行经历，包含机型、航段、时长、起落次数与训练科目，自动汇总统计。">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="logbook">
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <defs><linearGradient id="bw1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#3fe3c6"/><stop offset="1" stop-color="#f0b64b"/>
+        </linearGradient></defs>
+        <circle cx="20" cy="20" r="18.5" fill="none" stroke="rgba(141,171,201,.35)"/>
+        <path d="M7 25c7.5-1.2 11.6-4.6 13.6-11.4 1.1 6.4 4.6 9.8 11.4 10.6-5.6 1.1-9.2 3.4-10.7 7.3-1.1-3.9-5.9-5.8-14.3-6.5Z" fill="url(#bw1)"/>
+      </svg>
+      <span class="brand-txt"><span class="brand-name">FLYIFEI</span><span class="brand-sub">Cadet Pilot Log</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="index.html" data-nav="home">首页</a>
+      <a href="apply.html" data-nav="apply">申请信息</a>
+      <a href="cathay.html" data-nav="cathay">国泰与训练</a>
+      <a href="resources.html" data-nav="resources">学习资料</a>
+      <a href="logbook.html" data-nav="logbook">飞行记录</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="container">
+      <div class="eyebrow">Chapter 04 · Logbook</div>
+      <h1>飞行记录</h1>
+      <p>
+        模拟机和真实飞行分开记，但汇总在一起看。每一行都是一次真实发生过的训练：
+        飞了什么、练了什么、哪里没做好。数字由页面自动统计，不用手算。
+      </p>
+      <div class="chips">
+        <span class="chip jade">MSFS 2020 / 2024</span>
+        <span class="chip">翼胜 URSA MINOR 摇杆</span>
+        <span class="chip amber">数据在 assets/data/</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:26px">
+    <div class="container">
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-v"><span id="st-total-hours">0.0</span> <small>h</small></div>
+          <div class="stat-k">总飞行时长</div>
+        </div>
+        <div class="stat">
+          <div class="stat-v"><span id="st-msfs-hours">0.0</span> <small>h</small></div>
+          <div class="stat-k">模拟机</div>
+        </div>
+        <div class="stat amber">
+          <div class="stat-v"><span id="st-real-hours">0.0</span> <small>h</small></div>
+          <div class="stat-k">真实飞行</div>
+        </div>
+        <div class="stat violet">
+          <div class="stat-v"><span id="st-sectors">0</span> <small>段</small></div>
+          <div class="stat-k">航段总数</div>
+        </div>
+        <div class="stat">
+          <div class="stat-v"><span id="st-landings">0</span> <small>次</small></div>
+          <div class="stat-k">累计起落</div>
+        </div>
+        <div class="stat violet">
+          <div class="stat-v"><span id="st-types">0</span> <small>种</small></div>
+          <div class="stat-k">飞过的机型</div>
+        </div>
+        <div class="stat amber">
+          <div class="stat-v" style="font-size:1.15rem;padding-top:8px"><span id="st-last">—</span></div>
+          <div class="stat-k">最近一次飞行</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="grid" data-tabs>
+        <div class="tabs" style="justify-self:start">
+          <button class="tab active" data-tab="msfs">模拟飞行（MSFS）</button>
+          <button class="tab" data-tab="real">真实飞行</button>
+        </div>
+
+        <div class="panel" data-panel="msfs">
+          <div class="table-wrap reveal">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>日期</th><th>机型</th><th>注册号</th><th>航段</th><th>时长</th><th>起落</th><th>类别</th><th>当时在练什么</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-msfs">
+                  <tr><td colspan="8" style="text-align:center;color:var(--muted)">正在载入记录…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p style="margin-top:12px;font-size:12.4px;color:var(--muted)">
+            共 <span id="st-msfs-count">0</span> 段。标有「示例」的是占位数据，替换成你自己的即可。
+          </p>
+        </div>
+
+        <div class="panel" data-panel="real" hidden>
+          <div class="table-wrap reveal">
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>日期</th><th>机型</th><th>注册号</th><th>航段</th><th>时长</th><th>起落</th><th>类别</th><th>当时在练什么</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody-real">
+                  <tr><td colspan="8" style="text-align:center;color:var(--muted)">正在载入记录…</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p style="margin-top:12px;font-size:12.4px;color:var(--muted)">
+            共 <span id="st-real-count">0</span> 段。真实飞行包括体验飞行、飞行学校课程、PPL 训练等，写清教员与机型更容易回忆。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap:40px;align-items:start">
+        <div class="reveal">
+          <div class="eyebrow">Distribution</div>
+          <h2 style="font-size:1.5rem">机型分布</h2>
+          <p class="lead" style="margin-bottom:22px">按累计时长排序（模拟机 + 真实飞行合计）。</p>
+          <div id="type-summary" style="max-width:520px">
+            <p style="color:var(--muted);font-size:14px">正在统计…</p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="eyebrow">Milestones</div>
+          <h2 style="font-size:1.5rem">里程碑</h2>
+          <p class="lead" style="margin-bottom:18px">达成一个就点亮一个，日期自己填。</p>
+          <div class="grid" style="gap:10px">
+            <div class="card" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px">
+              <span style="font-size:14.4px;color:var(--text)">第一次模拟机「无辅助」落地</span>
+              <span class="chip jade">已达成</span>
+            </div>
+            <div class="card" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px">
+              <span style="font-size:14.4px;color:var(--text)">MSFS 累计 100 小时</span>
+              <span class="chip amber">进行中</span>
+            </div>
+            <div class="card" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px">
+              <span style="font-size:14.4px;color:var(--text)">真实飞行首次操纵起落</span>
+              <span class="chip amber">进行中</span>
+            </div>
+            <div class="card" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px">
+              <span style="font-size:14.4px;color:var(--text)">ICAO 英语测试通过</span>
+              <span class="chip">待达成</span>
+            </div>
+            <div class="card" style="padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px">
+              <span style="font-size:14.4px;color:var(--text)">拿到国泰 offer</span>
+              <span class="chip">待达成</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="divider"></div></div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">How to add</div>
+        <h2>怎么新增一条记录</h2>
+        <p class="lead">数据存在两个 JSON 文件里，加一行数组元素即可，页面会自动重算统计。</p>
+      </div>
+
+      <div class="grid grid-2" style="gap:24px;align-items:start">
+        <div class="reveal">
+          <div class="card" style="padding:22px">
+            <h3 style="font-size:.98rem;margin-bottom:10px">文件位置</h3>
+            <ul style="font-size:14px;color:var(--text-dim);display:flex;flex-direction:column;gap:8px">
+              <li>◆ 模拟机：<code style="font-family:var(--mono);color:var(--jade-2)">assets/data/msfs.json</code></li>
+              <li>◆ 真实飞行：<code style="font-family:var(--mono);color:var(--jade-2)">assets/data/real-flights.json</code></li>
+              <li>◆ 本地预览命令见 <code style="font-family:var(--mono)">README.md</code></li>
+            </ul>
+            <div class="note jade" style="margin-top:16px">
+              <span class="note-ico">◆</span>
+              <div>复制一条现成的记录，改日期和数值最省事。JSON 里最后一条后面不要多逗号。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="card" style="padding:22px">
+            <h3 style="font-size:.98rem;margin-bottom:10px">一条记录的字段</h3>
+            <pre style="margin:0;overflow-x:auto;font-family:var(--mono);font-size:12.4px;line-height:1.75;color:#c9dbe8;background:rgba(0,0,0,.35);border:1px solid var(--line);border-radius:10px;padding:16px">{
+  "date": "2026-12-01",
+  "type": "A320neo",
+  "reg": "B-LCN",
+  "from": "VHHH",
+  "to": "VMMC",
+  "hours": 1.2,
+  "ldg": 2,
+  "cat": "区域航线",
+  "remarks": "今天练了什么、哪里出错"
+}</pre>
+            <p style="margin-top:12px;font-size:12.6px;color:var(--muted)">
+              <code style="font-family:var(--mono)">hours</code> 为小时（可小数），<code style="font-family:var(--mono)">ldg</code> 为降落次数，
+              <code style="font-family:var(--mono)">from</code>/<code style="font-family:var(--mono)">to</code> 用 ICAO 四字码（VHHH 香港、VMMC 澳门、EGLL 伦敦希思罗）。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <defs><linearGradient id="bw2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#3fe3c6"/><stop offset="1" stop-color="#f0b64b"/>
+            </linearGradient></defs>
+            <circle cx="20" cy="20" r="18.5" fill="none" stroke="rgba(141,171,201,.35)"/>
+            <path d="M7 25c7.5-1.2 11.6-4.6 13.6-11.4 1.1 6.4 4.6 9.8 11.4 10.6-5.6 1.1-9.2 3.4-10.7 7.3-1.1-3.9-5.9-5.8-14.3-6.5Z" fill="url(#bw2)"/>
+          </svg>
+          <span class="brand-txt"><span class="brand-name">FLYIFEI</span><span class="brand-sub">Cadet Pilot Log</span></span>
+        </a>
+        <p>一个飞行学员的记录本：申请国泰见习飞行员计划的每一步，以及每一次在模拟机与真实驾驶舱里的起落。</p>
+      </div>
+      <div>
+        <h4>Sitemap</h4>
+        <div class="footer-links">
+          <a href="apply.html">申请信息</a>
+          <a href="cathay.html">国泰与训练</a>
+          <a href="resources.html">学习资料</a>
+          <a href="logbook.html">飞行记录</a>
+        </div>
+      </div>
+      <div>
+        <h4>Official</h4>
+        <div class="footer-links">
+          <a href="https://careers.cathaypacific.com/en/careers/our-teams/pilot" target="_blank" rel="noopener">国泰招聘 · 飞行员</a>
+          <a href="https://careers.cathaypacific.com/cn/careers/our-teams/pilot/pilot-detail-page" target="_blank" rel="noopener">见习飞行员计划（中文）</a>
+          <a href="https://www.cad.gov.hk/english/aeromedical.html" target="_blank" rel="noopener">HKCAD 体检要求</a>
+          <a href="https://github.com/flyifei" target="_blank" rel="noopener">我的 GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> FLYIFEI · 个人记录，非国泰航空官方页面</span>
+      <span>PLAIN HTML / CSS / JS · HOSTED ON GITHUB PAGES</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/logbook.js"></script>
+</body>
+</html>
