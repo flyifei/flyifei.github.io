@@ -1,4 +1,4 @@
-# Yifei Li — Cadet Pilot Notes
+# Jeff Li — Cadet Pilot Notes
 
 Personal study site for the Cathay Pacific Cadet Pilot Programme.
 Live at **https://flyifei.github.io**
